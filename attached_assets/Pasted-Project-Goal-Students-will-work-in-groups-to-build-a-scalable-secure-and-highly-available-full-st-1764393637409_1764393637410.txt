@@ -1,0 +1,44 @@
+Project Goal
+Students will work in groups to build a scalable, secure, and highly available full-stack application (e.g., an e-commerce platform, a content management system, or a collaborative task manager) leveraging a variety of AWS services and modern development practices.
+Key Components and Required Integrations
+Front-End Application:
+Develop a React application that serves as the user interface.
+Implement front-end performance optimizations such as code splitting, lazy loading, and tree-shaking.
+Ensure Web Content Accessibility Guidelines (WCAG 2.2) compliance.
+Measure and verify performance and accessibility using Google Lighthouse, demonstrating improvements over a baseline.
+Deploy the optimized React application using AWS Amplify Hosting or Amazon S3 with CloudFront, which is highly recommended for industry alignment and AWS certification preparation.
+Back-End (Serverless) Architecture:
+Design and deploy a secure RESTful API using AWS API Gateway.
+Implement API logic using AWS Lambda functions for various operations (e.g., CRUD operations for data management).
+Utilize Amazon DynamoDB as the primary NoSQL database for flexible and scalable data storage.
+(Optional, for complex relational data): Integrate Amazon RDS (PostgreSQL) for specific relational data needs.
+Integrate Amazon ElastiCache (e.g., Redis or Memcached) for caching frequently accessed data to improve API responsiveness and reduce database load.
+Implement AWS Simple Queue Service (SQS) for asynchronous processing and background jobs to enhance efficiency and scalability.
+Identity and Access Management (IAM) for Applications:
+Implement robust user authentication and authorization using AWS Cognito User Pools for user sign-up, sign-in, and profile management.
+Integrate Cognito User Pools with API Gateway using Cognito Authorizers to secure API endpoints, ensuring only authenticated and authorized users can access specific functionalities.
+Utilize AWS Cognito Identity Pools (Federated Identities) to grant authenticated users temporary, least-privilege access to other AWS services (e.g., direct access to an S3 bucket or invoking specific Lambda functions).
+Configure appropriate IAM roles for all Lambda functions and Cognito users, strictly adhering to the principle of least privilege.
+Automated Deployment (CI/CD) and Infrastructure as Code (IaC):
+Define all AWS infrastructure using Infrastructure as Code (IaC) via AWS CloudFormation or Cloud Development Kit (CDK), or AWS Serverless Application Model (SAM) for serverless components. This demonstrates programmatic infrastructure provisioning.
+Establish a comprehensive CI/CD pipeline using AWS Code Services (CodeCommit/GitHub, CodeBuild, CodeDeploy, CodePipeline).
+CodeBuild for compiling and packaging application code (with a buildspec.yml file).
+CodeDeploy for automated deployments to chosen targets (e.g., Lambda, EC2, or ECS Fargate, using an appspec.yml if applicable).
+CodePipeline to orchestrate the entire workflow from source code changes to deployment.
+(Optional): Containerize parts of the application using Docker and deploy to Amazon Elastic Container Service (ECS) Fargate for containerized microservices.
+Application Monitoring and Observability:
+Implement comprehensive application monitoring by configuring CloudWatch Logs to collect logs from all application components (Lambda, API Gateway, EC2 if used).
+Create CloudWatch Metrics and Alarms based on application-specific metrics (e.g., Lambda invocations/errors, API latency, DynamoDB throughput).
+Integrate AWS X-Ray for distributed tracing to monitor request flow and identify performance bottlenecks across serverless components (API Gateway, Lambda, DynamoDB) and other integrated services.
+Expected Deliverables
+Project Plan and Architectural Design Document: Outlining the application's features, chosen AWS services, data models, and high-level architecture.
+Source Code Repository: Hosted on AWS CodeCommit or GitHub, containing all application code, IaC templates (CloudFormation/CDK/SAM), and CI/CD configuration files (buildspec.yml, appspec.yml).
+Deployed Application URL: A publicly accessible URL to the functioning application.
+Screenshots/Evidence:
+Google Lighthouse reports (baseline and optimized) for the front-end.
+AWS Console screenshots demonstrating configured services (e.g. API Gateway, Lambda functions, DynamoDB, RDS, ElastiCache, SQS, Cognito User/Identity Pools, CloudFront, S3 bucket policies).
+Evidence of the CI/CD pipeline's successful execution within CodePipeline.
+CloudWatch dashboards, metrics, and alarms.
+AWS X-Ray trace maps and details for request flow.
+Proof of successful authentication via Cognito and authorized/unauthorized API access.
+Final Presentation and Demonstration: A live demonstration of the application, an explanation of the architecture, design choices, challenges faced, and lessons learned.

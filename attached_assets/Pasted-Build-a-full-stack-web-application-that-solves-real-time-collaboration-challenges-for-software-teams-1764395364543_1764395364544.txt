@@ -1,0 +1,94 @@
+Build a full-stack web application that solves real-time collaboration challenges for software teams, specifically:
+- reducing code conflicts,
+- improving pull-request (PR) reviews,
+- helping distributed teams in different time zones,
+- aligning on architecture decisions.
+
+🎯 Application Purpose:
+This platform should help teams coordinate work, communicate changes clearly, and synchronize on architecture and code updates.
+
+🧩 Core Features:
+1. Real-time collaboration board:
+   - Kanban-style task board with statuses (To Do, In Progress, Review, Done)
+   - Real-time updates using WebSockets or serverless WebSocket APIs
+   - Team roles (Engineer, Reviewer, Architect)
+
+2. Architecture Decision Log (ADR) Portal:
+   - Create, view, and update Architecture Decision Records
+   - Support for tags and versioning
+   - Comment thread for team discussion
+
+3. Pull Request Review Helper:
+   - Page to paste or upload code diffs
+   - AI-generated PR summary + review checklist
+   - Highlight risky changes (security, performance, infra)
+
+4. Time-Zone Collaboration Planner:
+   - Team member time zones
+   - Auto-generated best meeting times
+   - Leave notes for teammates asynchronously
+
+5. Project Activity Timeline:
+   - Real-time feed of commits, tasks moved, ADR changes
+   - Filtering by team member, category, date
+
+6. Team Chat / Discussion:
+   - Threaded discussions related to tasks or ADRs
+   - Mentions, reactions
+   - Notification panel
+
+🖥️ Front-End Requirements:
+- Framework: React (with TypeScript preferred)
+- Pages:
+  - Dashboard
+  - Task Board
+  - ADR Log
+  - PR Review Helper
+  - Time Zone Planner
+  - Activity Feed
+  - Profile & Settings
+- UI:
+  - Modern, clean UI (use TailwindCSS or Material UI)
+  - WCAG 2.2 accessibility compliance
+  - Implement lazy loading, code splitting, tree shaking
+  - Lighthouse score > 90
+
+🗄️ Back-End Requirements:
+Use AWS Serverless:
+- API Gateway (REST)
+- AWS Lambda functions (Node.js or Python)
+- DynamoDB for all data:
+  • Tasks
+  • Architecture Decisions
+  • PR Review Notes
+  • Users
+  • Time zones and profile data
+- Cognito User Pool for sign-in/sign-up
+- S3 for storing any uploaded files/diffs
+- SQS for asynchronous background jobs (like notifications)
+- ElastiCache Redis (optional) for caching frequent reads
+
+🔧 Other Requirements:
+- Generate all Infrastructure as Code using AWS CDK or SAM.
+- Include a clean, organized project folder structure.
+- Produce buildspec.yml and appspec.yml for CI/CD.
+- Add placeholder Lambda logic and sample test data.
+- Create reusable components and hooks in React.
+- Provide sample API Gateway routes.
+- Write comments and instructions in code.
+
+📦 Output:
+1. Full project folder structure
+2. React front-end code (components, pages, routes)
+3. All Lambda function handlers
+4. DynamoDB table definitions
+5. CDK/SAM IaC templates for deployment
+6. Example JSON data
+7. Example API requests
+8. A README explaining:
+   - features
+   - setup steps
+   - how to run locally
+   - how to deploy on AWS
+
+Make sure the code is production-ready, modular, typed (if TypeScript), clean, and easy for a team to expand.
